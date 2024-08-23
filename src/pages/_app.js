@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }) {
     } else {
       setSelectedKeys(['home']);
     }
-  }, [router?.pathname]);
+  }, []);
   return (
     <ConfigProvider theme={themeConfig}>
       <Layout>

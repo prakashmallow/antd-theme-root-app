@@ -3,6 +3,9 @@ import { NextFederationPlugin } from '@module-federation/nextjs-mf';
 
 const nextConfig = {
   reactStrictMode: true,
+  experimental: {
+    optimizePackageImports: ['antd']
+  },
   webpack(config, options) {
     const { isServer } = options;
     config.plugins.push(
@@ -23,6 +26,10 @@ const nextConfig = {
             requiredVersion: false,
             singleton: true
           },
+          "@ant-design/cssinjs": {
+            requiredVersion: false,
+            singleton: true
+          }
         },
       }),
     );
